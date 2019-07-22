@@ -13,7 +13,10 @@ class CreateAction extends \yii\base\Action {
        
        if (\Yii::$app->request->isPost) {
            $activity->load(\Yii::$app->request->post());
-           print_r($activity->getAttributes());
+
+           if(\Yii::$app->activity->createActivity($activity)){
+               echo 'Успех.';exit;
+           }
        }
        
        return $this->controller->render('create', ['model'=>$activity]);
