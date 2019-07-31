@@ -13,6 +13,13 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        
+        'auth' => ['class'=>\app\components\AuthComponent::class],
+        
+        'dao' => [
+            'class' => \app\components\DAOComponent::class
+        ],
+       
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'hfhhshhdsj',
